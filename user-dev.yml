@@ -1,8 +1,8 @@
 server:
-  port: 8081
+  port: 8085
 spring:
   application:
-    name: item-service
+    name: user-service
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/leyou?characterEncoding=UTF-8&useSSL=false
     username: root
@@ -10,6 +10,8 @@ spring:
     hikari:
       maximum-pool-size: 20
       minimum-idle: 10
+  redis:
+    host: 192.168.19.121
   rabbitmq:
     host: 192.168.19.121
     username: /leyou
@@ -18,10 +20,9 @@ spring:
     template:
       retry:
         enabled: true
-        multiplier: 2
-        initial-interval: 10000ms
         max-interval: 210000ms
-      exchange: leyou.item.exchange
+        initial-interval: 10000ms
+        multiplier: 2
     publisher-confirms: true
 eureka:
   client:
@@ -33,8 +34,7 @@ eureka:
     prefer-ip-address: true  #当你获取host时，返回的不是主机名，而是ip
     ip-address: 127.0.0.1
     lease-renewal-interval-in-seconds: 5
-    lease-expiration-duration-in-seconds: 10
-
+    lease-expiration-duration-in-seconds: 15
 ribbon:
   ConnectTimeout: 4000 # 连接超时时间(ms)
   ReadTimeout: 2000 # 通信超时时间(ms)
@@ -48,3 +48,5 @@ hystrix:
         isolation:
           thread:
             timeoutInMillisecond: 10000 # 熔断超时时长：10000ms
+mybatis:
+  type-aliases-package: com.leyou.user.pojo

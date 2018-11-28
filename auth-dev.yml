@@ -1,39 +1,27 @@
 server:
-  port: 8081
+  port: 8087
 spring:
   application:
-    name: item-service
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/leyou?characterEncoding=UTF-8&useSSL=false
-    username: root
-    password: 123456
-    hikari:
-      maximum-pool-size: 20
-      minimum-idle: 10
-  rabbitmq:
-    host: 192.168.19.121
-    username: /leyou
-    password: leyou
-    virtual-host: /leyou
-    template:
-      retry:
-        enabled: true
-        multiplier: 2
-        initial-interval: 10000ms
-        max-interval: 210000ms
-      exchange: leyou.item.exchange
-    publisher-confirms: true
+    name: auth-service
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:10086/eureka
-    registry-fetch-interval-seconds: 5
+    registry-fetch-interval-seconds: 10
   instance:
     instance-id: ${spring.application.name}:${server.port}
     prefer-ip-address: true  #当你获取host时，返回的不是主机名，而是ip
     ip-address: 127.0.0.1
-    lease-renewal-interval-in-seconds: 5
-    lease-expiration-duration-in-seconds: 10
+    lease-expiration-duration-in-seconds: 10 #10秒不发送九过期
+    lease-renewal-interval-in-seconds: 5 #每隔5秒发一次心跳
+leyou:
+  jwt:
+    secret: leyou@Login(Auth}*^31)&heiMa% # 登录校验的密钥
+    pubKeyPath: G:\\tmp\\rsa\\rsa.pub # 公钥地址
+    priKeyPath: G:\\tmp\\rsa\\rsa.pri # 私钥地址
+    expire: 30 # 过期时间,单位分钟
+    cookieName: LY_TOKEN
+    cookieMaxAge: 30
 
 ribbon:
   ConnectTimeout: 4000 # 连接超时时间(ms)

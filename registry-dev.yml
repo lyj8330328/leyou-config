@@ -1,0 +1,28 @@
+server:
+  port: 10086
+spring:
+  application:
+    name: ly-registry
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  server:
+    enable-self-preservation: false  #关闭自我保护
+    eviction-interval-timer-in-ms: 5000 #每隔5秒进行一次服务列表清理
+
+ribbon:
+  ConnectTimeout: 4000 # 连接超时时间(ms)
+  ReadTimeout: 2000 # 通信超时时间(ms)
+  OkToRetryOnAllOperations: true # 是否对所有操作重试
+  MaxAutoRetriesNextServer: 1 # 同一服务不同实例的重试次数
+  MaxAutoRetries: 1 # 同一实例的重试次数
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 10000 # 熔断超时时长：10000ms

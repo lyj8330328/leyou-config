@@ -1,0 +1,37 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: cart-service
+  redis:
+    host: 192.168.19.121
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+    registry-fetch-interval-seconds: 10
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true  #当你获取host时，返回的不是主机名，而是ip
+    ip-address: 127.0.0.1
+    lease-expiration-duration-in-seconds: 10 #10秒不发送九过期
+    lease-renewal-interval-in-seconds: 5 #每隔5秒发一次心跳
+
+ribbon:
+  ConnectTimeout: 4000 # 连接超时时间(ms)
+  ReadTimeout: 2000 # 通信超时时间(ms)
+  OkToRetryOnAllOperations: true # 是否对所有操作重试
+  MaxAutoRetriesNextServer: 1 # 同一服务不同实例的重试次数
+  MaxAutoRetries: 1 # 同一实例的重试次数
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 10000 # 熔断超时时长：10000ms
+
+leyou:
+  jwt:
+    cookieName: LY_TOKEN
+    pubKeyPath: G:\\tmp\\rsa\\rsa.pub # 公钥地址
