@@ -3,13 +3,6 @@ server:
 spring:
   application:
     name: comments-service
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/leyou?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
-    username: root
-    password: 123456
-    hikari:
-      maximum-pool-size: 200
-      minimum-idle: 100
   rabbitmq:
     host: 192.168.19.121
     username: /leyou
