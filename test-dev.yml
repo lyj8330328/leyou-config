@@ -23,5 +23,7 @@ eureka:
     ip-address: 127.0.0.1
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 10
-ip: 1233123213
+ip:
+  t:
+    w: 123123123213
 
