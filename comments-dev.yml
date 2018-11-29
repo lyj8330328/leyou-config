@@ -1,5 +1,5 @@
 server:
-  port: 9092
+  port: 8092
   tomcat:
     max-connections: 5000
 spring:
@@ -24,7 +24,7 @@ spring:
   redis:
     host: 192.168.19.121
   jackson:
-    default-property-inclusion: non_null # ÅäÖÃjson´¦ÀíÊ±ºöÂÔ¿ÕÖµ
+    default-property-inclusion: non_null # é…ç½®jsonå¤„ç†æ—¶å¿½ç•¥ç©ºå€¼
 eureka:
   client:
     service-url:
@@ -32,16 +32,16 @@ eureka:
     registry-fetch-interval-seconds: 5
   instance:
     instance-id: ${spring.application.name}:${server.port}
-    prefer-ip-address: true  #µ±Äã»ñÈ¡hostÊ±£¬·µ»ØµÄ²»ÊÇÖ÷»úÃû£¬¶øÊÇip
+    prefer-ip-address: true  #å½“ä½ è·å–hostæ—¶ï¼Œè¿”å›çš„ä¸æ˜¯ä¸»æœºåï¼Œè€Œæ˜¯ip
     ip-address: 127.0.0.1
-    lease-expiration-duration-in-seconds: 10 #10Ãë²»·¢ËÍ¾Å¹ıÆÚ
-    lease-renewal-interval-in-seconds: 5 #Ã¿¸ô5Ãë·¢Ò»´ÎĞÄÌø
+    lease-expiration-duration-in-seconds: 10 #10ç§’ä¸å‘é€ä¹è¿‡æœŸ
+    lease-renewal-interval-in-seconds: 5 #æ¯éš”5ç§’å‘ä¸€æ¬¡å¿ƒè·³
 ribbon:
-  ConnectTimeout: 4000 # Á¬½Ó³¬Ê±Ê±¼ä(ms)
-  ReadTimeout: 2000 # Í¨ĞÅ³¬Ê±Ê±¼ä(ms)
-  OkToRetryOnAllOperations: true # ÊÇ·ñ¶ÔËùÓĞ²Ù×÷ÖØÊÔ
-  MaxAutoRetriesNextServer: 1 # Í¬Ò»·şÎñ²»Í¬ÊµÀıµÄÖØÊÔ´ÎÊı
-  MaxAutoRetries: 1 # Í¬Ò»ÊµÀıµÄÖØÊÔ´ÎÊı
+  ConnectTimeout: 4000 # è¿æ¥è¶…æ—¶æ—¶é—´(ms)
+  ReadTimeout: 2000 # é€šä¿¡è¶…æ—¶æ—¶é—´(ms)
+  OkToRetryOnAllOperations: true # æ˜¯å¦å¯¹æ‰€æœ‰æ“ä½œé‡è¯•
+  MaxAutoRetriesNextServer: 1 # åŒä¸€æœåŠ¡ä¸åŒå®ä¾‹çš„é‡è¯•æ¬¡æ•°
+  MaxAutoRetries: 1 # åŒä¸€å®ä¾‹çš„é‡è¯•æ¬¡æ•°
 
 leyou:
   worker:
@@ -49,4 +49,4 @@ leyou:
     dataCenterId: 2
   jwt:
     cookieName: LY_TOKEN
-    pubKeyPath: G:\\tmp\\rsa\\rsa.pub # ¹«Ô¿µØÖ·
+    pubKeyPath: G:\\tmp\\rsa\\rsa.pub # å…¬é’¥åœ°å€
