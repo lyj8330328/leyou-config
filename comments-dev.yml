@@ -4,7 +4,7 @@ server:
     max-connections: 5000
 spring:
   application:
-    name: review-service
+    name: comments-service
   data:
     mongodb:
       host: localhost
