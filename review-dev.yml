@@ -45,8 +45,8 @@ ribbon:
 
 leyou:
   worker:
-    workerId: 1
-    dataCenterId: 1
+    workerId: 2
+    dataCenterId: 2
   jwt:
     cookieName: LY_TOKEN
     pubKeyPath: G:\\tmp\\rsa\\rsa.pub # ¹«Ô¿µØÖ·
