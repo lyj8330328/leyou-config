@@ -1,5 +1,5 @@
 server:
-  port: 8092
+  port: 9092
   tomcat:
     max-connections: 5000
 spring:
