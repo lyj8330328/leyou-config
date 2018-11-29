@@ -33,9 +33,9 @@ leyou:
     pubKeyPath: G:\\tmp\\rsa\\rsa.pub # 公钥地址
   filter:
     allowPaths:
-      /api/auth
-      /api/search
-      /api/user/register
-      /api/user/check
-      /api/user/code
-      /api/item
+      - /api/auth
+      - /api/search
+      - /api/user/register
+      - /api/user/check
+      - /api/user/code
+      - /api/item
