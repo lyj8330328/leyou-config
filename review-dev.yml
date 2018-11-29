@@ -29,10 +29,6 @@ eureka:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 10
 
-mybatis:
-  type-aliases-package: com.leyou.order.pojo
-  mapper-locations: mapper/OrderMapper.xml
-
 ribbon:
   ConnectTimeout: 4000 # 连接超时时间(ms)
   ReadTimeout: 2000 # 通信超时时间(ms)
