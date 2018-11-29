@@ -16,6 +16,11 @@ spring:
     hikari:
       maximum-pool-size: 20
       minimum-idle: 10
+  rabbitmq:
+    virtual-host: /leyou
+    username: /leyou
+    password: leyou
+    host: 192.168.19.121
   redis:
     host: 192.168.19.121
   jackson:
