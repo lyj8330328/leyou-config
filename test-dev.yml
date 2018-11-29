@@ -12,6 +12,10 @@ spring:
       minimum-idle: 10
   rabbitmq:
     host: 192.168.19.121
+  data:
+    mongodb:
+      host: localhost
+      database: spitdb
 eureka:
   client:
     service-url:
