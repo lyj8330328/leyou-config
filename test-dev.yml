@@ -29,7 +29,7 @@ eureka:
     lease-expiration-duration-in-seconds: 10
 ip:
   t:
-    w: 123
+    w: 123123
 
 leyou:
   jwt:
