@@ -7,7 +7,7 @@ spring:
     name: comments-service
   data:
     mongodb:
-      host: localhost
+      host: 192.168.19.121
       database: spitdb
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/leyou?characterEncoding=UTF-8&useSSL=false
