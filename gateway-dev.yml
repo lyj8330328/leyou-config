@@ -29,7 +29,7 @@ zuul:
     cart-service: /cart/** #购物车微服务
     order-service: /** #订单微服务
     seckill-service: /seckill/** #秒杀微服务
-    review-service: /review/** #评论微服务
+    review-service: /comment/** #评论微服务
   ignored-services:
     - upload-service # 忽略upload-service服务
   add-host-header: true #携带请求本身的head头信息
