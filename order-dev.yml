@@ -15,9 +15,6 @@ spring:
     username: /leyou
     password: leyou
     virtual-host: /leyou
-    template:
-      exchange: leyou.order.delay.exchange
-    publisher-confirms: true
   redis:
     host: 192.168.19.121
 eureka:
